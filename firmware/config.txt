@@ -1,6 +1,7 @@
 dtoverlay=pi3-disable-bt
 dtparam=i2c_arm=on
 dtparam=spi=on
+disable_overscan=1
 
 # RTC
 dtoverlay=i2c-rtc,ds3231
@@ -10,6 +11,9 @@ dtoverlay=i2c-rtc,ds3231
 
 # USB Device
 dtoverlay=dwc2
+
+# Disable Splash Screen
+disable_splash=1
 
 gpu_mem=64
 lcd_rotate=2
