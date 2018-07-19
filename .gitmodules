@@ -79,7 +79,7 @@
 	ignore = untracked
 [submodule "packages/qmlrss/qmlrss"]
 	path = packages/qmlrss/qmlrss
-	url = git://github.com/nihwkroot/qmlrss
+	url = https://github.com/nihwkroot/qmlrss
 	ignore = untracked
 [submodule "packages/apds9960d/apds9960d"]
 	path = packages/apds9960d/apds9960d

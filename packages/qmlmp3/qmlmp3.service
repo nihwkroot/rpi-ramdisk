@@ -1,0 +1,10 @@
+[Unit]
+Description=QML RSS Reader
+
+[Service]
+Environment=QT_QPA_EVDEV_KEYBOARD_PARAMETERS=grab=1
+ExecStart=/opt/qt/bin/qmlmp3
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
