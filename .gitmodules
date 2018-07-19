@@ -22,6 +22,41 @@
 	url = git://code.qt.io/qt/qtdeclarative.git
 	branch = 5.11.1
 	ignore = untracked
+[submodule "packages/qt/qtwebengine-chromium"]
+	path = packages/qt/qtwebengine-chromium
+	url = git://code.qt.io/qt/qtwebengine-chromium.git
+	branch = 5.11.1
+	ignore = untracked
+[submodule "packages/qt/qtwebengine-chromium"]
+	path = packages/qt/qtwebengine-chromium
+	url = git://code.qt.io/qt/qtwebengine-chromium.git
+	branch = 5.11.1
+	ignore = untracked
+[submodule "packages/qt/qtwebengine"]
+	path = packages/qt/qtwebengine
+	url = git://code.qt.io/qt/qtwebengine.git
+	branch = 5.11.1
+	ignore = untracked
+[submodule "packages/qt/qtwebglplugin"]
+	path = packages/qt/qtwebglplugin
+	url = git://code.qt.io/qt/qtwebglplugin.git
+	branch = 5.11.1
+	ignore = untracked
+[submodule "packages/qt/qtwebkit"]
+	path = packages/qt/qtwebkit
+	url = git://code.qt.io/qt/qtwebkit.git
+	branch = 5.11.1
+	ignore = untracked
+[submodule "packages/qt/qtwebsockets"]
+	path = packages/qt/qtwebsockets
+	url = git://code.qt.io/qt/qtwebsockets.git
+	branch = 5.11.1
+	ignore = untracked
+[submodule "packages/qt/qtwebview"]
+	path = packages/qt/qtwebview
+	url = git://code.qt.io/qt/qtwebview.git
+	branch = 5.11.1
+	ignore = untracked
 [submodule "packages/gstreamer/gstreamer"]
 	path = packages/gstreamer/gstreamer
 	url = git://anongit.freedesktop.org/git/gstreamer/gstreamer
