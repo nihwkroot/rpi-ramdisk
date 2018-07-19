@@ -27,8 +27,10 @@ qt.tar.gz: sysroot.part $(shell for repo in $(REPOS); do echo $$repo.timestamp; 
 
 	$(MAKE) -C qtbase $(REDIRECT)
 	$(MAKE) -C qtbase install $(REDIRECT)
+	cd $(BASEDIR)
 	for repo in $(SUBREPOS); do \
-		cd $$repo && ../qt-host/bin/qmake $(REDIRECT); \
+		cd ../$$repo && ../qt-host/bin/qmake $(REDIRECT); \
+		cd $(BASEDIR); \
 		$(MAKE) -C $$repo $(REDIRECT); \
 		$(MAKE) -C $$repo install $(REDIRECT); \
 	done
