@@ -3,8 +3,8 @@ include ../toolchain.mk
 PREFIX := /opt/qt
 HOSTPREFIX := $(BASEDIR)/qt-host
 
-REPOS := qtbase qtwebengine-chromium qtwebengine qtwebkit qtdeclarative qtwebsockets qtwebview qtwebglplugin qtxmlpatterns
-SUBREPOS := qtwebglplugin qtwebview qtdeclarative qtxmlpatterns qtwebsockets qtwebkit qtwebengine qtwebengine-chromium
+REPOS := qtbase qtwebengine qtwebkit qtdeclarative qtwebsockets qtwebview qtwebglplugin qtxmlpatterns
+SUBREPOS := qtwebglplugin qtwebview qtdeclarative qtxmlpatterns qtwebsockets qtwebkit qtwebengine
 
 ifeq ("$(VERBOSE_QT_BUILD)","1")
 REDIRECT :=
@@ -15,8 +15,8 @@ endif
 all: qt.tar.gz
 
 qt.tar.gz: sysroot.part $(shell for repo in $(REPOS); do echo $$repo.timestamp; done )
-	rm -rf --one-file-system $(STAGE) $(HOSTPREFIX)
-	for repo in $(REPOS); do git -C $$repo clean -dfxq; done
+	#rm -rf --one-file-system $(STAGE) $(HOSTPREFIX)
+	#for repo in $(REPOS); do git -C $$repo clean -dfxq; done
 
 	cd qtbase && ./configure -release -opengl es2 -device linux-rasp-pi2-g++ \
 		-qpa eglfs -no-libinput -no-linuxfb -no-xcb -no-kms -no-gbm \
