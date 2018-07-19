@@ -3,7 +3,7 @@ include ../toolchain.mk
 PREFIX := /opt/qt
 HOSTPREFIX := $(BASEDIR)/qt-host
 
-REPOS := $(shell find . -maxdepth 1 -type d | grep ./ | sed 's/.\///g')
+REPOS := qtbase qtwebengine-chromium qtwebengine qtwebkit qtdeclarative qtwebsockets qtwebview qtwebglplugin qtxmlpatterns
 SUBREPOS := qtwebglplugin qtwebview qtdeclarative qtxmlpatterns qtwebsockets qtwebkit qtwebengine qtwebengine-chromium
 
 ifeq ("$(VERBOSE_QT_BUILD)","1")
