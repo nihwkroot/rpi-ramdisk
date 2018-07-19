@@ -3,7 +3,8 @@ include ../toolchain.mk
 PREFIX := /opt/qt
 HOSTPREFIX := $(BASEDIR)/qt-host
 
-REPOS := qtbase qtxmlpatterns qtdeclarative
+REPOS := $(shell find . -maxdepth 1 -type d | grep ./ | sed 's/.\///g')
+SUBREPOS := qtwebglplugin qtwebview qtdeclarative qtxmlpatterns qtwebsockets qtwebkit qtwebengine qtwebengine-chromium
 
 ifeq ("$(VERBOSE_QT_BUILD)","1")
 REDIRECT :=
@@ -26,12 +27,12 @@ qt.tar.gz: sysroot.part $(shell for repo in $(REPOS); do echo $$repo.timestamp; 
 
 	$(MAKE) -C qtbase $(REDIRECT)
 	$(MAKE) -C qtbase install $(REDIRECT)
-	cd qtxmlpatterns && ../qt-host/bin/qmake $(REDIRECT)
-	$(MAKE) -C qtxmlpatterns $(REDIRECT)
-	$(MAKE) -C qtxmlpatterns install $(REDIRECT)
-	cd qtdeclarative && ../qt-host/bin/qmake $(REDIRECT)
-	$(MAKE) -C qtdeclarative $(REDIRECT)
-	$(MAKE) -C qtdeclarative install $(REDIRECT)
+
+	for repo in $(SUBREPOS); do \
+		cd $(repo) && ../qt-host/bin/qmake $(REDIRECT) \
+		$(MAKE) -C $(repo) $(REDIRECT) \
+		$(MAKE) -C $(repo) install $(REDIRECT) \
+	done;
 
 	mkdir -p $(STAGE)/etc/ld.so.conf.d
 	echo $(PREFIX)/lib > $(STAGE)/etc/ld.so.conf.d/opt-qt.conf
