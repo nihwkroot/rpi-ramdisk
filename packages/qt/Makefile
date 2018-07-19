@@ -27,12 +27,11 @@ qt.tar.gz: sysroot.part $(shell for repo in $(REPOS); do echo $$repo.timestamp; 
 
 	$(MAKE) -C qtbase $(REDIRECT)
 	$(MAKE) -C qtbase install $(REDIRECT)
-
 	for repo in $(SUBREPOS); do \
-		cd $(repo) && ../qt-host/bin/qmake $(REDIRECT) \
-		$(MAKE) -C $(repo) $(REDIRECT) \
-		$(MAKE) -C $(repo) install $(REDIRECT) \
-	done;
+		cd $$repo && ../qt-host/bin/qmake $(REDIRECT); \
+		$(MAKE) -C $$repo $(REDIRECT); \
+		$(MAKE) -C $$repo install $(REDIRECT); \
+	done
 
 	mkdir -p $(STAGE)/etc/ld.so.conf.d
 	echo $(PREFIX)/lib > $(STAGE)/etc/ld.so.conf.d/opt-qt.conf
