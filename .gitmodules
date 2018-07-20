@@ -22,19 +22,9 @@
 	url = git://code.qt.io/qt/qtdeclarative.git
 	branch = 5.11.1
 	ignore = untracked
-[submodule "packages/qt/qtwebengine-chromium"]
-	path = packages/qt/qtwebengine-chromium
-	url = git://code.qt.io/qt/qtwebengine-chromium.git
-	branch = 5.11.1
-	ignore = untracked
-[submodule "packages/qt/qtwebengine-chromium"]
-	path = packages/qt/qtwebengine-chromium
-	url = git://code.qt.io/qt/qtwebengine-chromium.git
-	branch = 5.11.1
-	ignore = untracked
 [submodule "packages/qt/qtwebengine"]
 	path = packages/qt/qtwebengine
-	url = git://code.qt.io/qt/qtwebengine.git
+	url = http://code.qt.io/cgit/qt/qtwebengine.git 
 	branch = 5.11.1
 	ignore = untracked
 [submodule "packages/qt/qtwebglplugin"]
